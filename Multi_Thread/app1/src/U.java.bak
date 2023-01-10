@@ -1,0 +1,26 @@
+class U
+{
+	public static void main(String[] args) 
+	{
+		Thread t1 = Thread.currentThread();
+		System.out.println(t1.isDaemon());
+
+		t1.setDaemon(true);
+		System.out.println(t1.isDaemon());
+	}
+}
+/*
+U.java:8: error: incompatible types: boolean cannot be converted to String
+                t1.setName(true);
+                           ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+
+A:\baba core java\Multi threads\app1\src>javac -d ../classes U.java
+
+A:\baba core java\Multi threads\app1\src>java -cp ../classes U
+false
+Exception in thread "main" java.lang.IllegalThreadStateException
+        at java.lang.Thread.setDaemon(Unknown Source)
+        at U.main(U.java:8)
+		*/
